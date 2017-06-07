@@ -40,13 +40,61 @@ h1 {
   grid-column: 1 / 2;
 }
 
-.card-icon {
+.card-icon-NEW {
   grid-row: 1 / 2;
   grid-column: 2 / 3;
   justify-self: right;
   width: 20px;
   height: 20px;
   background-color: LightBlue;
+  border-radius: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column-align: center;
+      justify-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card-icon-OK {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  justify-self: right;
+  width: 20px;
+  height: 20px;
+  background-color: LightGreen;
+  border-radius: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column-align: center;
+      justify-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card-icon-LATE {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  justify-self: right;
+  width: 20px;
+  height: 20px;
+  background-color: Orange;
+  border-radius: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column-align: center;
+      justify-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card-icon-ABSENT {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  justify-self: right;
+  width: 20px;
+  height: 20px;
+  background-color: red;
   border-radius: 100%;
   display: -ms-grid;
   display: grid;

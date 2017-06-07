@@ -52,7 +52,7 @@ function handleSubmit(ev){
     const student = {
     name: studentName,
     image: studentImage,
-    status: "OK"
+    status: "NEW"
 }
 
     var d1 = document.getElementById('grid');
@@ -65,7 +65,7 @@ function handleSubmit(ev){
         const name = students[i].name;
         const image = students[i].image;
         const status = students[i].status;
-        d1.insertAdjacentHTML('beforeend', createCard(name, image, name+"-icon", status));
+        d1.insertAdjacentHTML('afterbegin', createCard(name, image, name+"-icon", status));
     }
 
 }
@@ -76,7 +76,7 @@ function createCard(name, image, icon, status){
                 <img class="card-img" src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg" alt="Profile" />
                 <div class="card-info">
                 <h1 class="card-title">${name}</h1>
-                <div class="card-icon-${status}(" id="${icon}"></div>
+                <div class="card-icon-${status}" id="${icon}"></div>
                 <p class="card-buttons" id="${name}"><button type="button" id="ok" onClick="okay(this.parentNode.id)">Ok</button> <button type="button" id="late" onClick = late(this.parentNode.id)>Late</button> <button type="button" id="absent" onClick=absent(this.parentNode.id)>Absent</button></p>
                 </div>
             </div>
