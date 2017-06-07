@@ -48,14 +48,12 @@ function remove(id){
         console.log("Student Name: " + students[i].name);
         if(students[i].name === id){
             students.splice(i, 1);
-            console.log("Removed Successfully");
         }
     }
-    console.log("Remove Finished");
 
     var d1 = document.getElementById('grid');
     d1.innerHTML = "";
-    
+
     for(var i = 0; i < students.length; i++){
         console.log(students[i].name);
         const name = students[i].name;
@@ -86,7 +84,11 @@ function handleSubmit(ev){
     for(var i = 0; i < students.length; i++){
         console.log(students[i].name);
         const name = students[i].name;
-        const image = students[i].image;
+        let image = students[i].image;
+        if(image === ""){
+            image = "http://hope4merton.com/wp-content/uploads/2015/12/profile-placeholder.gif";
+            students[i].image = image;
+        }
         const status = students[i].status;
         d1.insertAdjacentHTML('afterbegin', createCard(name, image, name+"-icon", status));
     }
@@ -96,7 +98,7 @@ function handleSubmit(ev){
 function createCard(name, image, icon, status){
     const card = `
         <div class="card">
-                <img class="card-img" src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg" alt="Profile" />
+                <img src="${image}" alt="Profile/>
                 <div class="card-info">
                 <h1 class="card-title">${name}</h1>
                 <div class="card-icon-${status}" id="${icon}"></div>
@@ -104,7 +106,8 @@ function createCard(name, image, icon, status){
                     <button class="c-buttons" type="button" id="ok" onClick = okay(this.parentNode.id)>Ok</button> 
                     <button type="button" class="c-buttons" id="late" onClick = late(this.parentNode.id)>Late</button> 
                     <button type="button" class="c-buttons" id="absent" onClick = absent(this.parentNode.id)>Absent</button>   
-                    <button type="button" class="c-buttons" id="delete" onClick = remove(this.parentNode.id)>X</button></p>
+                    <button type="button" class="c-buttons" id="delete" onClick = remove(this.parentNode.id)>X</button>
+                    </p>
                 </div>
             </div>
     `;
