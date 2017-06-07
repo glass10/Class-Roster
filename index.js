@@ -42,6 +42,29 @@ function absent(id){
     console.log("absent");
 }
 
+function remove(id){
+    console.log("ID: "+id);
+    for(var i = 0; i < students.length; i++){
+        console.log("Student Name: " + students[i].name);
+        if(students[i].name === id){
+            students.splice(i, 1);
+            console.log("Removed Successfully");
+        }
+    }
+    console.log("Remove Finished");
+
+    var d1 = document.getElementById('grid');
+    d1.innerHTML = "";
+    
+    for(var i = 0; i < students.length; i++){
+        console.log(students[i].name);
+        const name = students[i].name;
+        const image = students[i].image;
+        const status = students[i].status;
+        d1.insertAdjacentHTML('afterbegin', createCard(name, image, name+"-icon", status));
+    }
+}
+
 function handleSubmit(ev){
 
     ev.preventDefault();
@@ -77,7 +100,11 @@ function createCard(name, image, icon, status){
                 <div class="card-info">
                 <h1 class="card-title">${name}</h1>
                 <div class="card-icon-${status}" id="${icon}"></div>
-                <p class="card-buttons" id="${name}"><button type="button" id="ok" onClick="okay(this.parentNode.id)">Ok</button> <button type="button" id="late" onClick = late(this.parentNode.id)>Late</button> <button type="button" id="absent" onClick=absent(this.parentNode.id)>Absent</button></p>
+                <p class="card-buttons" id="${name}">
+                    <button class="c-buttons" type="button" id="ok" onClick = okay(this.parentNode.id)>Ok</button> 
+                    <button type="button" class="c-buttons" id="late" onClick = late(this.parentNode.id)>Late</button> 
+                    <button type="button" class="c-buttons" id="absent" onClick = absent(this.parentNode.id)>Absent</button>   
+                    <button type="button" class="c-buttons" id="delete" onClick = remove(this.parentNode.id)>X</button></p>
                 </div>
             </div>
     `;
