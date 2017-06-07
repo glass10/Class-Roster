@@ -1,8 +1,9 @@
-body {
-  padding: 0rem 25rem;
+body{
+    padding: 1rem;
 }
 input { 
     text-align: center; 
+    padding: 0rem 25rem;
 }
 h1 {
 	font-family: "Brush Script MT", cursive;
@@ -14,10 +15,11 @@ h1 {
     padding: 1.5rem;
 }
 
-
 .card {
   width: 200px;
   height: 250px;
+  padding: 1rem;
+  float: left;
 }
 
 .card-info {
@@ -44,7 +46,7 @@ h1 {
   justify-self: right;
   width: 20px;
   height: 20px;
-  background-color: LightGreen;
+  background-color: LightBlue;
   border-radius: 100%;
   display: -ms-grid;
   display: grid;
@@ -65,12 +67,10 @@ h1 {
 }
 
 .card-buttons {
-    align-content: center;
-  -webkit-align-self: bottom;
-      -ms-flex-item-align: bottom;
-              -ms-grid-row-align: bottom;
-          align-self: bottom;
-  justify-self: right;
+    /*align-content: center;*/
+    align-self: bottom;
+    align-self: center;
+    float: left;
 }
 
 .button-rounded-hover {
