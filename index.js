@@ -103,7 +103,7 @@ function createCard(name, image, icon, status){
                 <h1 class="card-title">${name}</h1>
                 <div class="card-icon-${status}" id="${icon}"></div>
                 <p class="card-buttons" id="${name}">
-                    <button class="c-buttons" type="button" id="ok" onClick = okay(this.parentNode.id)>Ok</button> 
+                    <button class="c-buttons" type="button" id="ok" onClick = okay(this.parentNode.id)>Here</button> 
                     <button type="button" class="c-buttons" id="late" onClick = late(this.parentNode.id)>Late</button> 
                     <button type="button" class="c-buttons" id="absent" onClick = absent(this.parentNode.id)>Absent</button>   
                     <button type="button" class="c-buttons" id="delete" onClick = remove(this.parentNode.id)>X</button>
